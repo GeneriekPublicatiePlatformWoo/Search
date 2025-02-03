@@ -67,7 +67,7 @@ cryptography==43.0.1
     #   mozilla-django-oidc
     #   pyopenssl
     #   webauthn
-django==4.2.16
+django==4.2.18
     # via
     #   commonground-api-common
     #   django-admin-index
@@ -89,6 +89,7 @@ django==4.2.16
     #   django-rest-framework-condition
     #   django-rosetta
     #   django-sendfile2
+    #   django-sessionprofile
     #   django-setup-configuration
     #   django-simple-certmanager
     #   django-solo
@@ -98,6 +99,7 @@ django==4.2.16
     #   djangorestframework-inclusions
     #   drf-nested-routers
     #   drf-spectacular
+    #   drf-spectacular-sidecar
     #   drf-yasg
     #   maykin-2fa
     #   mozilla-django-oidc
@@ -158,6 +160,8 @@ django-rosetta==0.10.0
     # via -r requirements/base.in
 django-sendfile2==0.7.1
     # via django-privates
+django-sessionprofile==3.0.0
+    # via open-api-framework
 django-setup-configuration==0.3.0
     # via open-api-framework
 django-simple-certmanager==2.3.0
@@ -199,6 +203,8 @@ drf-nested-routers==0.94.1
     # via commonground-api-common
 drf-spectacular==0.27.2
     # via open-api-framework
+drf-spectacular-sidecar==2025.2.1
+    # via drf-spectacular
 drf-yasg==1.21.7
     # via commonground-api-common
 ecs-logging==2.2.0
@@ -233,7 +239,7 @@ isodate==0.6.1
     # via commonground-api-common
 itypes==1.2.0
     # via coreapi
-jinja2==3.1.4
+jinja2==3.1.5
     # via coreschema
 josepy==1.14.0
     # via mozilla-django-oidc
@@ -255,7 +261,7 @@ mozilla-django-oidc-db==0.19.0
     # via open-api-framework
 notifications-api-common==0.2.2
     # via commonground-api-common
-open-api-framework==0.8.0
+open-api-framework==0.9.0
     # via -r requirements/base.in
 orderedmultidict==1.0.1
     # via furl
@@ -351,7 +357,7 @@ sqlparse==0.5.1
     # via django
 textile==4.0.2
     # via django-markup
-tornado==6.4.1
+tornado==6.4.2
     # via flower
 typing-extensions==4.12.2
     # via

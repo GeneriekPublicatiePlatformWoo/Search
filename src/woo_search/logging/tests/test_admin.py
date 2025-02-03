@@ -257,18 +257,21 @@ class AuditLogAdminTests(WebTest):
 
         # Expected queries:
         #
-        #  1. mozilla-django-oidc-db config grabbing (not sure why?)
-        #  2. select django session for authenticated user
-        #  3. look up the super user from the session's user_id
-        #  4. get total count of log records
-        #  5. get total count of log records (bis)
-        #  6. select the log records to display
-        #  7. get the admin index configuration
-        #  8. get the admin index configuration (second aspect)
-        #  9. get the admin index configuration (third aspect)
-        # 10. get the timestamp min/max for the date_hierarchy links
-        # 11. another query related to date_hierarchy I think
-        with self.assertNumQueries(11):
+        #  1. select django session for authenticated user
+        #  2. look up the super user from the session's user_id
+        #  3. get total count of log records
+        #  4. get total count of log records (bis)
+        #  5. select the log records to display
+        #  6. get the admin index configuration
+        #  7. get the admin index configuration (second aspect)
+        #  8. get the admin index configuration (third aspect)
+        #  9. get the timestamp min/max for the date_hierarchy links
+        #  10. another query related to date_hierarchy I think
+        #
+        # added by updating open-api-framework from 0.8.0 to 0.9.0 ticket #46:
+        #  11. get all active django sessions
+        #  12. look up the super user from the session's user_id (again)
+        with self.assertNumQueries(12):
             response = self.app.get(self.list_url)
 
         self.assertEqual(response.status_code, 200)

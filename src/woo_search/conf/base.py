@@ -34,6 +34,11 @@ INSTALLED_APPS.remove("notifications_api_common")
 
 MIDDLEWARE = MIDDLEWARE + [
     "hijack.middleware.HijackUserMiddleware",
+    # NOTE: affects *all* requests, not just API calls. We can't subclass (yet) either
+    # to modify the behaviour, since drf-spectacular has a bug in its `issubclass`
+    # check, which is unreleased at the time of writing:
+    # https://github.com/tfranzel/drf-spectacular/commit/71c7a04ee8921c01babb11fbe2938397a372dac7
+    "djangorestframework_camel_case.middleware.CamelCaseMiddleWare",
 ]
 
 #
@@ -46,7 +51,6 @@ CSRF_FAILURE_VIEW = "woo_search.accounts.views.csrf_failure"
 # Custom settings
 #
 PROJECT_NAME = _("WOO Search")
-ENABLE_ADMIN_NAV_SIDEBAR = config("ENABLE_ADMIN_NAV_SIDEBAR", default=False)
 
 # Displaying environment information
 ENVIRONMENT_LABEL = config("ENVIRONMENT_LABEL", ENVIRONMENT)
@@ -119,7 +123,7 @@ if SUBPATH:
 #
 
 REST_FRAMEWORK = BASE_REST_FRAMEWORK.copy()
-REST_FRAMEWORK["PAGE_SIZE"] = 100
+REST_FRAMEWORK["PAGE_SIZE"] = 10
 REST_FRAMEWORK["DEFAULT_SCHEMA_CLASS"] = "drf_spectacular.openapi.AutoSchema"
 REST_FRAMEWORK["DEFAULT_FILTER_BACKENDS"] = (
     "django_filters.rest_framework.DjangoFilterBackend",
@@ -166,12 +170,12 @@ SPECTACULAR_SETTINGS = {
     "CAMELIZE_NAMES": True,
     "TOS": None,
     "CONTACT": {
-        "url": "https://github.com/GeneriekPublicatiePlatformWoo/search",
+        "url": "https://github.com/GPP-Woo/GPP-zoeken",
         "email": "support@maykinmedia.nl",
     },
     "LICENSE": {
         "name": "EUPL",
-        "url": "https://github.com/GeneriekPublicatiePlatformWoo/search/blob/main/LICENSE.md",
+        "url": "https://github.com/GPP-Woo/GPP-zoeken/blob/main/LICENSE.md",
     },
     "VERSION": "0.1.0",
     "TAGS": [],

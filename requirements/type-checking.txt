@@ -156,7 +156,7 @@ cssselect==1.2.0
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   pyquery
-django==4.2.16
+django==4.2.18
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -181,6 +181,7 @@ django==4.2.16
     #   django-rest-framework-condition
     #   django-rosetta
     #   django-sendfile2
+    #   django-sessionprofile
     #   django-setup-configuration
     #   django-simple-certmanager
     #   django-solo
@@ -192,6 +193,7 @@ django==4.2.16
     #   djangorestframework-inclusions
     #   drf-nested-routers
     #   drf-spectacular
+    #   drf-spectacular-sidecar
     #   drf-yasg
     #   maykin-2fa
     #   mozilla-django-oidc
@@ -313,6 +315,11 @@ django-sendfile2==0.7.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-privates
+django-sessionprofile==3.0.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   open-api-framework
 django-setup-configuration==0.3.0
     # via
     #   -c requirements/ci.txt
@@ -402,6 +409,11 @@ drf-spectacular==0.27.2
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   open-api-framework
+drf-spectacular-sidecar==2025.2.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   drf-spectacular
 drf-yasg==1.21.7
     # via
     #   -c requirements/ci.txt
@@ -511,7 +523,7 @@ itypes==1.2.0
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   coreapi
-jinja2==3.1.4
+jinja2==3.1.5
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -589,7 +601,7 @@ notifications-api-common==0.2.2
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   commonground-api-common
-open-api-framework==0.8.0
+open-api-framework==0.9.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -885,7 +897,7 @@ textile==4.0.2
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-markup
-tornado==6.4.1
+tornado==6.4.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -944,7 +956,7 @@ vine==5.1.0
     #   amqp
     #   celery
     #   kombu
-waitress==3.0.0
+waitress==3.0.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
