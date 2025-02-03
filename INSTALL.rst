@@ -44,7 +44,7 @@ development machine.
 
    .. code-block:: bash
 
-       git clone git@github.com:GeneriekPublicatiePlatformWoo/search.git
+       git clone git@github.com:GPP-Woo/GPP-zoeken.git
        cd search
 
 3. Install all required (backend) libraries.
@@ -78,16 +78,25 @@ development machine.
 
        python src/manage.py createsuperuser
 
-7. You can now run your installation and point your browser to the address
+7. Create a .env file with database settings. See dotenv.example for an example.
+
+        cp dotenv.example .env
+
+8. You can now run your installation and point your browser to the address
    given by this command:
 
    .. code-block:: bash
 
        python src/manage.py runserver
 
-8. Create a .env file with database settings. See dotenv.example for an example.
+9. (In a different shell or tab) Spin up Elastic Search for the index
 
-        cp dotenv.example .env
+   .. code-block:: bash
+
+       docker compose up -d es
+
+   You can access it at http://localhost:9200 and log in with ``elastic`` /
+   ``insecure-elastic``. For development, the cluster is named ``gpp-search-dev``.
 
 
 **Note:** If you are making local, machine specific, changes, add them to
@@ -162,7 +171,7 @@ The easiest way to get the project started is by using `Docker Compose`_.
 
    .. code-block:: bash
 
-       git clone git@github.com:GeneriekPublicatiePlatformWoo/search.git
+       git clone git@github.com:GPP-Woo/GPP-zoeken.git
        Cloning into 'search'...
        ...
 
@@ -216,7 +225,7 @@ The easiest way to get the project started is by using `Docker Compose`_.
    system you can run ``docker system prune``.
 
 .. _Docker Compose: https://docs.docker.com/compose/install/
-.. _Github: https://github.com/GeneriekPublicatiePlatformWoo/search
+.. _Github: https://github.com/GPP-Woo/GPP-zoeken
 
 
 More Docker
