@@ -27,11 +27,11 @@ info:
     HTTP request headers, and the values in those headers will be recorded in the
     audit logs.
   contact:
-    url: https://github.com/GeneriekPublicatiePlatformWoo/search
+    url: https://github.com/GPP-Woo/GPP-zoeken
     email: support@maykinmedia.nl
   license:
     name: EUPL
-    url: https://github.com/GeneriekPublicatiePlatformWoo/search/blob/main/LICENSE.md
+    url: https://github.com/GPP-Woo/GPP-zoeken/blob/main/LICENSE.md
 paths: {}
 components: {}
 externalDocs:
